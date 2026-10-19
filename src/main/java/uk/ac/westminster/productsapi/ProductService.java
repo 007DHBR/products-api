@@ -38,4 +38,18 @@ public class ProductService {
                 .filter(p -> p.getName().contains(name))
                 .toList();
     }
+    public ProductService() {
+        Product digitalProduct = new DigitalProduct(
+                nextId++,
+                "Clean Code (E-Book)", 100.00,
+                "downloads/cleancode.pdf", 12.00);
+
+        Product physicalProduct = new PhysicalProduct(
+                nextId++,
+                "27-inch Monitor", 249.99,
+                5.4, "61cm x 41cm x 18cm");
+
+        products.add(digitalProduct);
+        products.add(physicalProduct);
+    }
 }
