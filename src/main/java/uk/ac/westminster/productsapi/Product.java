@@ -1,6 +1,6 @@
 package uk.ac.westminster.productsapi;
 
-public class Product {
+public abstract class Product {
 
     public void setId(Long id) { this.id = id; }
     public void setName(String name) { this.name = name; }
@@ -25,4 +25,7 @@ public class Product {
     public String getName() { return name; }
 
     public double getPrice() { return price; }
+
+    // No body: Product cannot describe itself, so every concrete subclass MUST provide its own summary.
+    public abstract String getSummary();
 }
